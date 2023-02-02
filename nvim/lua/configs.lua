@@ -6,7 +6,7 @@ local g = vim.g -- global variables
 -- local b     = vim.bo            -- buffer-scoped options
 -- local w     = vim.wo            -- windows-scoped options
 
-require("tokyonight").setup(
+require("catppuccin").setup(
   {
     transparent = true
   }

@@ -227,6 +227,19 @@ _G.packer_plugins = {
     path = "/Users/chuckles/.local/share/nvim/site/pack/packer/start/ripgrep",
     url = "https://github.com/BurntSushi/ripgrep"
   },
+  ["smart-pairs"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\2\18\2\0\0009\0\2\0B\0\2\1K\0\1\0\nsetup\npairs\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/chuckles/.local/share/nvim/site/pack/packer/opt/smart-pairs",
+    url = "https://github.com/ZhiyuanLck/smart-pairs"
+  },
+  ["smart-splits.nvim"] = {
+    loaded = true,
+    path = "/Users/chuckles/.local/share/nvim/site/pack/packer/start/smart-splits.nvim",
+    url = "https://github.com/mrjones2014/smart-splits.nvim"
+  },
   ["suda.vim"] = {
     loaded = true,
     path = "/Users/chuckles/.local/share/nvim/site/pack/packer/start/suda.vim",
@@ -274,6 +287,12 @@ _G.packer_plugins = {
     path = "/Users/chuckles/.local/share/nvim/site/pack/packer/start/vim-obsession",
     url = "https://github.com/tpope/vim-obsession"
   },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0" },
+    loaded = true,
+    path = "/Users/chuckles/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
+  },
   ["zen-mode.nvim"] = {
     config = { " require('plugins/zen-mode') " },
     loaded = true,
@@ -283,18 +302,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
- require('plugins/lualine') 
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
- require('plugins/nvim-tree') 
-time([[Config for nvim-tree.lua]], false)
--- Config for: formatter.nvim
-time([[Config for formatter.nvim]], true)
- require('plugins/formatter') 
-time([[Config for formatter.nvim]], false)
+-- Config for: git-worktree.nvim
+time([[Config for git-worktree.nvim]], true)
+ require('plugins/git-worktree') 
+time([[Config for git-worktree.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
  require('plugins/treesitter') 
@@ -303,26 +314,22 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for zen-mode.nvim]], true)
  require('plugins/zen-mode') 
 time([[Config for zen-mode.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
- require('plugins/telescope') 
-time([[Config for telescope.nvim]], false)
--- Config for: lspkind-nvim
-time([[Config for lspkind-nvim]], true)
- require('plugins/lspkind') 
-time([[Config for lspkind-nvim]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+ require('plugins/luasnip') 
+time([[Config for LuaSnip]], false)
 -- Config for: neogit
 time([[Config for neogit]], true)
  require('plugins/neogit') 
 time([[Config for neogit]], false)
--- Config for: git-worktree.nvim
-time([[Config for git-worktree.nvim]], true)
- require('plugins/git-worktree') 
-time([[Config for git-worktree.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
- require('plugins/blankline') 
-time([[Config for indent-blankline.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+ require('plugins/telescope') 
+time([[Config for telescope.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
  require('plugins/cmp') 
@@ -331,14 +338,37 @@ time([[Config for nvim-cmp]], false)
 time([[Config for telescope-bibtex.nvim]], true)
 try_loadstring("\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\vbibtex\19load_extension\14telescope\frequire\0", "config", "telescope-bibtex.nvim")
 time([[Config for telescope-bibtex.nvim]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
- require('plugins/luasnip') 
-time([[Config for LuaSnip]], false)
+-- Config for: formatter.nvim
+time([[Config for formatter.nvim]], true)
+ require('plugins/formatter') 
+time([[Config for formatter.nvim]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
  require('plugins/lsp') 
 time([[Config for nvim-lspconfig]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+ require('plugins/lualine') 
+time([[Config for lualine.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+ require('plugins/blankline') 
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+ require('plugins/nvim-tree') 
+time([[Config for nvim-tree.lua]], false)
+-- Config for: lspkind-nvim
+time([[Config for lspkind-nvim]], true)
+ require('plugins/lspkind') 
+time([[Config for lspkind-nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'smart-pairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -57,9 +57,9 @@ return require("packer").startup {
     use {
       "nvim-telescope/telescope-project.nvim"
     }
-    
-    use { 
-      "catppuccin/nvim", as = "catppuccin" 
+
+    use {
+      "catppuccin/nvim", as = "catppuccin"
     }
 
     use {
@@ -169,6 +169,27 @@ return require("packer").startup {
       "lambdalisue/suda.vim"
     }
 
+    use {
+      'ZhiyuanLck/smart-pairs',
+      event = 'InsertEnter',
+      config = function() require('pairs'):setup()
+      end
+    }
+
+    use('mrjones2014/smart-splits.nvim')
+
+    use {
+      "folke/which-key.nvim",
+      config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      }
+      end
+    }
     if packer_bootstrap then
       require("packer").sync()
     end
