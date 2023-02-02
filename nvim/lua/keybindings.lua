@@ -8,6 +8,20 @@ map("n", "j", "gj")
 map("n", "k", "gk")
 
 -- navigation
+-- window navigation
+-- recommended mappings
+-- resizing splits
+-- these keymaps will also accept a range,
+-- for example `10<A-h>` will `resize_left` by `(10 * config.default_amount)`
+vim.keymap.set('n', '<A-h>', "<cmd>require('smart-splits').resize_left)<cr>")
+vim.keymap.set('n', '<A-j>', "<cmd>require('smart-splits').resize_down)<cr>")
+vim.keymap.set('n', '<A-k>', "<cmd>require('smart-splits').resize_up)<cr>")
+vim.keymap.set('n', '<A-l>', "<cmd>require('smart-splits').resize_right)<cr>")
+-- moving between splits
+vim.keymap.set('n', '<C-h>', "<cmd>require('smart-splits').move_cursor_left)<cr>")
+vim.keymap.set('n', '<C-j>', "<cmd>require('smart-splits').move_cursor_down)<cr>")
+vim.keymap.set('n', '<C-k>', "<cmd>require('smart-splits').move_cursor_up<cr>")
+vim.keymap.set('n', '<C-l>', "<cmd>require('smart-splits').move_cursor_right<cr>")
 --- behave like other capitals
 map("n", "Y", "y$")
 --- keeping it centered
@@ -33,8 +47,9 @@ map("n", "<leader>qo", "<cmd>:copen<cr>")
 
 -- lua tree
 map("n", "<Leader>tt", "<cmd>NvimTreeToggle<cr>")
-map("n", "<Leader>tf", "<cmd>NvimTreeFindFileToggle<cr>")
+map("n", "<Leader>tff", "<cmd>NvimTreeFindFileToggle<cr>")
 map("n", "<Leader>tr", "<cmd>NvimTreeRefresh<cr>")
+map("n", "<Leader>tf", "<cmd>NvimTreeFocus<cr>")
 
 -- language server
 map("n", "<Leader>vd", "<cmd>lua vim.lsp.buf.definition()<CR>")
