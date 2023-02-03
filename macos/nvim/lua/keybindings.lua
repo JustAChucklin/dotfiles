@@ -72,3 +72,11 @@ map("n", "<Leader>gwc", "<cmd>:lua require('telescope').extensions.git_worktree.
 
 --- zen-mode
 map("n", "<leader>z", "<cmd>ZenMode<cr>")
+
+-- neotest
+-- Run the nearest test
+map("n", "<Leader>ntn", "<cmd>lua require('neotest').run.run()<cr>")
+-- Run the Current File
+map("n", "<Leader>ntf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>")
+-- Attach to the nearest test
+map("n", "<Leader>nta", "<cmd>lua require('neotest').run.attach()<cr>")

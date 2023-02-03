@@ -190,6 +190,34 @@ return require("packer").startup {
       }
       end
     }
+
+    use {
+      "nvim-neotest/neotest",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+        "antoinemadec/FixCursorHold.nvim",
+        "nvim-neotest/neotest-python",
+        "nvim-neotest/neotest-plenary",
+        "nvim-neotest/neotest-vim-test",
+      }
+    }
+
+    use "folke/neodev.nvim"
+
+    use({
+      "utilyre/barbecue.nvim",
+      tag = "*",
+      requires = {
+        "SmiteshP/nvim-navic",
+        "nvim-tree/nvim-web-devicons", -- optional dependency
+      },
+      after = "nvim-web-devicons", -- keep this if you're using NvChad
+      config = function()
+      require("barbecue").setup()
+      end,
+    })
+
     if packer_bootstrap then
       require("packer").sync()
     end

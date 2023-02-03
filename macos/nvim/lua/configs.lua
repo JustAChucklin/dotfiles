@@ -112,3 +112,17 @@ cmd([[ au BufEnter *.json set ai expandtab shiftwidth=2 tabstop=2 sta fo=croql ]
 --- latex
 g.tex_flavor = "latex"
 cmd([[ autocmd FileType latex,tex,plaintex set wrap linebreak ]])
+
+require("neotest").setup({
+  adapters = {
+    require("neotest-python")({
+      dap = { justMyCode = false },
+      runner = "unittest",
+      python = "/Users/charles.blackard/dev/AaC/python/venv/bin/python3",
+    }),
+    require("neotest-plenary"),
+    require("neotest-vim-test")({
+      ignore_file_types = { "python", "vim", "lua" },
+    }),
+  },
+})
