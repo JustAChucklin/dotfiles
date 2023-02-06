@@ -87,10 +87,8 @@ _G.packer_plugins = {
   },
   ["barbecue.nvim"] = {
     config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rbarbecue\frequire\0" },
-    load_after = {
-      ["nvim-web-devicons"] = true
-    },
-    loaded = false,
+    load_after = {},
+    loaded = true,
     needs_bufread = false,
     path = "/Users/charles.blackard/.local/share/nvim/site/pack/packer/opt/barbecue.nvim",
     url = "https://github.com/utilyre/barbecue.nvim"
@@ -129,6 +127,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/charles.blackard/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["dashboard-nvim"] = {
+    config = { "\27LJ\2\n�\3\0\0\6\0\r\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\v\0005\3\4\0005\4\3\0=\4\5\0034\4\5\0005\5\6\0>\5\1\0045\5\a\0>\5\2\0045\5\b\0>\5\3\0045\5\t\0>\5\4\4=\4\n\3=\3\f\2B\0\2\1K\0\1\0\vconfig\1\0\0\rshortcut\1\0\4\ngroup\vNumber\bkey\6d\vaction\23Telescope dotfiles\tdesc\17 dotfiles\1\0\4\ngroup\19DiagnosticHint\bkey\6a\vaction\18Telescope app\tdesc\r Apps\1\0\4\ngroup\nLabel\bkey\6f\vaction\25Telescope find_files\tdesc\14 Files\1\0\4\ngroup\14@property\bkey\6u\vaction\16Lazy update\tdesc\15 Update\16week_header\1\0\0\1\0\1\venable\2\nsetup\14dashboard\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/charles.blackard/.local/share/nvim/site/pack/packer/opt/dashboard-nvim",
+    url = "https://github.com/glepnir/dashboard-nvim"
   },
   ["formatter.nvim"] = {
     config = { " require('plugins/formatter') " },
@@ -179,6 +185,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/charles.blackard/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["mkdnflow.nvim"] = {
+    config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rmkdnflow\frequire\0" },
+    loaded = true,
+    path = "/Users/charles.blackard/.local/share/nvim/site/pack/packer/start/mkdnflow.nvim",
+    url = "https://github.com/jakewvincent/mkdnflow.nvim"
   },
   ["neodev.nvim"] = {
     loaded = true,
@@ -252,11 +264,9 @@ _G.packer_plugins = {
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
-    after = { "barbecue.nvim" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/charles.blackard/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    loaded = true,
+    path = "/Users/charles.blackard/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -323,6 +333,11 @@ _G.packer_plugins = {
     path = "/Users/charles.blackard/.local/share/nvim/site/pack/packer/start/vim-eunuch",
     url = "https://github.com/tpope/vim-eunuch"
   },
+  ["vim-helm"] = {
+    loaded = true,
+    path = "/Users/charles.blackard/.local/share/nvim/site/pack/packer/start/vim-helm",
+    url = "https://github.com/towolf/vim-helm"
+  },
   ["vim-lumen"] = {
     loaded = true,
     path = "/Users/charles.blackard/.local/share/nvim/site/pack/packer/start/vim-lumen",
@@ -348,26 +363,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lspkind-nvim
-time([[Config for lspkind-nvim]], true)
- require('plugins/lspkind') 
-time([[Config for lspkind-nvim]], false)
--- Config for: telescope-bibtex.nvim
-time([[Config for telescope-bibtex.nvim]], true)
-try_loadstring("\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\vbibtex\19load_extension\14telescope\frequire\0", "config", "telescope-bibtex.nvim")
-time([[Config for telescope-bibtex.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
- require('plugins/treesitter') 
-time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+ require('plugins/lsp') 
+time([[Config for nvim-lspconfig]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
  require('plugins/lualine') 
 time([[Config for lualine.nvim]], false)
--- Config for: formatter.nvim
-time([[Config for formatter.nvim]], true)
- require('plugins/formatter') 
-time([[Config for formatter.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: neogit
+time([[Config for neogit]], true)
+ require('plugins/neogit') 
+time([[Config for neogit]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
  require('plugins/nvim-tree') 
@@ -376,10 +387,10 @@ time([[Config for nvim-tree.lua]], false)
 time([[Config for git-worktree.nvim]], true)
  require('plugins/git-worktree') 
 time([[Config for git-worktree.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
+-- Config for: telescope-bibtex.nvim
+time([[Config for telescope-bibtex.nvim]], true)
+try_loadstring("\27LJ\2\nK\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\vbibtex\19load_extension\14telescope\frequire\0", "config", "telescope-bibtex.nvim")
+time([[Config for telescope-bibtex.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
  require('plugins/cmp') 
@@ -388,31 +399,49 @@ time([[Config for nvim-cmp]], false)
 time([[Config for indent-blankline.nvim]], true)
  require('plugins/blankline') 
 time([[Config for indent-blankline.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
- require('plugins/telescope') 
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
- require('plugins/lsp') 
-time([[Config for nvim-lspconfig]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
- require('plugins/luasnip') 
-time([[Config for LuaSnip]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+ require('plugins/treesitter') 
+time([[Config for nvim-treesitter]], false)
+-- Config for: mkdnflow.nvim
+time([[Config for mkdnflow.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rmkdnflow\frequire\0", "config", "mkdnflow.nvim")
+time([[Config for mkdnflow.nvim]], false)
 -- Config for: zen-mode.nvim
 time([[Config for zen-mode.nvim]], true)
  require('plugins/zen-mode') 
 time([[Config for zen-mode.nvim]], false)
--- Config for: neogit
-time([[Config for neogit]], true)
- require('plugins/neogit') 
-time([[Config for neogit]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+ require('plugins/telescope') 
+time([[Config for telescope.nvim]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+ require('plugins/luasnip') 
+time([[Config for LuaSnip]], false)
+-- Config for: lspkind-nvim
+time([[Config for lspkind-nvim]], true)
+ require('plugins/lspkind') 
+time([[Config for lspkind-nvim]], false)
+-- Config for: formatter.nvim
+time([[Config for formatter.nvim]], true)
+ require('plugins/formatter') 
+time([[Config for formatter.nvim]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-web-devicons ]]
+vim.cmd [[ packadd barbecue.nvim ]]
+
+-- Config for: barbecue.nvim
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rbarbecue\frequire\0", "config", "barbecue.nvim")
+
+time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'smart-pairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'dashboard-nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

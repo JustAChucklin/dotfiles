@@ -218,6 +218,51 @@ return require("packer").startup {
       end,
     })
 
+    use {
+      'glepnir/dashboard-nvim',
+      event = 'VimEnter',
+      config = function()
+        require('dashboard').setup {
+          config = {
+            week_header = {
+            enable = true,
+            },
+            shortcut = {
+              { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
+              {
+                desc = ' Files',
+                group = 'Label',
+                action = 'Telescope find_files',
+                key = 'f',
+              },
+              {
+                desc = ' Apps',
+                group = 'DiagnosticHint',
+                action = 'Telescope app',
+                key = 'a',
+              },
+              {
+                desc = ' dotfiles',
+                group = 'Number',
+                action = 'Telescope dotfiles',
+                key = 'd',
+              },
+            },
+          },
+        }
+      end,
+      requires = {"nvim-tree/nvim-web-devicons"}
+    }
+
+    use {"nvim-tree/nvim-web-devicons"}
+
+    use {"towolf/vim-helm"}
+
+    use({'jakewvincent/mkdnflow.nvim',
+      config = function()
+        require('mkdnflow').setup({})
+      end
+    })
     if packer_bootstrap then
       require("packer").sync()
     end
