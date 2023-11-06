@@ -1,0 +1,100 @@
+:: resize @
+
+cmd - r ; resize
+resize < h : skhd -k "shift + alt - a";
+resize < l : skhd -k "shift + alt - d";
+resize < j : skhd -k "shift + alt - s";
+resize < k : skhd -k "shift + alt - w";
+# resize < escape ; default
+resize < cmd - r ; default
+
+# enter fullscreen mode for the focused container
+cmd - f : yabai -m window --toggle zoom-fullscreen
+
+# change focus between tiling / floating windows
+shift + alt - space : yabai -m window --toggle float
+
+# change layout of desktop
+alt - e : yabai -m space --layout bsp
+alt - s : yabai -m space --layout monocle
+
+# kill focused window
+shift + alt - q : yabai -m window --destroy
+
+# change focus
+cmd - h : yabai -m window --focus west
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east
+
+alt - p : yabai -m window --focus prev
+alt - n : yabai -m window --focus next
+
+# move focused window
+shift + cmd - h : yabai -m window --warp west
+shift + cmd - j : yabai -m window --warp south
+shift + cmd - k : yabai -m window --warp north
+shift + cmd - l : yabai -m window --warp east
+
+alt - r : yabai -m space --rotate 90
+
+# move focused container to workspace
+# shift + alt - m : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
+# shift + alt - p : chunkc tiling::window --send-to-desktop prev
+# shift + alt - n : chunkc tiling::window --send-to-desktop next
+shift + cmd - 1 : yabai -m window --space 1; yabai -m space --focus 1
+shift + cmd - 2 : yabai -m window --space 2; yabai -m space --focus 2
+shift + cmd - 3 : yabai -m window --space 3; yabai -m space --focus 3
+shift + cmd - 4 : yabai -m window --space 4; yabai -m space --focus 4
+shift + cmd - 5 : yabai -m window --space 5; yabai -m space --focus 5
+shift + cmd - 6 : yabai -m window --space 6; yabai -m space --focus 6
+shift + cmd - 7 : yabai -m window --space 7; yabai -m space --focus 7
+shift + cmd - 8 : yabai -m window --space 8; yabai -m space --focus 8
+shift + cmd - 9 : yabai -m window --space 9; yabai -m space --focus 9
+shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
+
+# fast focus desktop
+#cmd - b : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
+#cmd - b : chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
+# cmd - b : skhd -k "cmd - $(chunkc get _last_active_desktop)"
+#cmd + alt - b : yabai -m window --space last; yabai -m space --focus last
+#cmd + alt - z : yabai -m window --space prev; yabai -m space --focus prev
+#cmd + alt - c : yabai -m window --space next; yabai -m space --focus next
+
+cmd -b : yabai -m space --focus recent
+
+# cmd + alt - 1 : chunkc tiling::desktop --focus 1
+# cmd + alt - 2 : chunkc tiling::desktop --focus 2
+# cmd + alt - 3 : chunkc tiling::desktop --focus 3
+# cmd + alt - 4 : chunkc tiling::desktop --focus 4
+# cmd + alt - 5 : chunkc tiling::desktop --focus 5
+# cmd + alt - 6 : chunkc tiling::desktop --focus 6
+# # cmd + alt - 7 : chunkc tiling::desktop --focus 7
+
+# move window
+shift + ctrl - h : yabai -m window --move rel:-20:0
+shift + ctrl - j : yabai -m window --move rel:0:20
+shift + ctrl - k : yabai -m window --move rel:0:-20
+shift + ctrl - l : yabai -m window --move rel:20:0
+
+
+# i3esque resize functionality
+default, resize < shift + alt - a : yabai -m window \
+                                      --resize left:-20:0;\
+                                    yabai -m window \
+                                      --resize right:20:0
+default, resize < shift + alt - s : yabai -m window \
+                                      --resize top:0:20; \
+                                    yabai -m window \
+                                      --resize bottom:0:-20
+default, resize < shift + alt - w : yabai -m window \
+                                      --resize top:0:-20; \
+                                    yabai -m window \
+                                      --resize bottom:0:20
+default, resize < shift + alt - d : yabai -m window \
+                                      --resize left:20:0;\
+                                    yabai -m window \
+                                      --resize right:-20:0
+
+cmd - d : open /System/Applications/Launchpad.app
+
