@@ -1,0 +1,7 @@
+[[rules]]
+mime = "application/x-wine-extension-msp"
+use = "exe"
+
+[[rules]]
+name = "*.exe"
+use = "exe"

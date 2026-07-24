@@ -1,0 +1,16 @@
+#![enable(implicit_some)]
+(
+    // Connect to your user MPD socket
+    address: "~/.local/share/mpd/socket",
+
+    // Or if you prefer TCP (if MPD is listening on a port):
+    // address: "127.0.0.1:6600",
+
+    // Album art display (works great in Kitty)
+    album_art: (
+        method: Kitty,
+        max_size_px: (width: 600, height: 600),
+    ),
+
+    theme: "~/.config/rmpc/theme.ron"
+)

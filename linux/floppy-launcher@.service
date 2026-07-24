@@ -1,0 +1,15 @@
+[Unit]
+Description=Floppy Disk Game Launcher (%i)
+After=multi-user.target graphical.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/floppy-launcher.sh /dev/%I
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=floppy-launcher
+User=root
+
+[Install]
+WantedBy=graphical.target
+
