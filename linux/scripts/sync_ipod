@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Simple rsync wrapper with clean progress output
+# Usage: rsync-sync <source> <destination> [additional rsync options]
+SOURCE="/home/chuckles/Music/"
+DEST="/run/media/chuckles/CHUCK_IPOD/music/"
+shift 2
+EXTRA_OPTS="$@"
+
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "📂 Syncing Files"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "From: $SOURCE"
+echo "To:   $DEST"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+
+# Run rsync with nice progress output
+# Excludes common unwanted files/folders
+rsync -avh --info=progress2 --stats \
+    --exclude='playlists/' \
+    --exclude='*.m3u' \
+    --exclude='*.m3u8' \
+    --exclude='.DS_Store' \
+    --exclude='.Trash*' \
+    $EXTRA_OPTS "$SOURCE" "$DEST"
+
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "✓ Sync Complete!"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+

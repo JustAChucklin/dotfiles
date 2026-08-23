@@ -1,0 +1,9 @@
+{
+  "state_file":  "crimson_state.json",
+  "cache_file":  "crimson_cache.json",
+  "mod_prefix":  "DuDu",
+  "overlay_min": 100,
+  "backup_keep": 2,
+  "mods_dir":    "/home/chuckles/game_drives/CRUC2-2TB/SteamLibrary/steamapps/common/Crimson Desert/mods",
+  "game_dir":    "/home/chuckles/game_drives/CRUC2-2TB/SteamLibrary/steamapps/common/Crimson Desert"
+}

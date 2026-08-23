@@ -1,0 +1,11 @@
+[Unit]
+Description=EasyEffects inside Xvfb
+
+[Service]
+Type=simple
+ExecStart=/home/chuckles/.local/bin/easyeffects-xvfb start
+ExecStop=/home/chuckles/.local/bin/easyeffects-xvfb stop
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

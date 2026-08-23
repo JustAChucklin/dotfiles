@@ -1,0 +1,15 @@
+[Unit]
+Description=Sunshine Gamestream Host
+After=graphical-session.target
+PartOf=graphical-session.target
+Wants=network.target
+
+[Service]
+ExecStart=/usr/bin/sunshine
+# Let systemd import the session environment automatically
+Environment=HOME=%h
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target
